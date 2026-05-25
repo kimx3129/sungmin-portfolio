@@ -6,7 +6,10 @@ const FROM_EMAIL = "onboarding@resend.dev"; // free tier sender (no domain neede
 
 export async function POST(request: NextRequest) {
   // Lazy-init so the build doesn't fail when RESEND_API_KEY is absent
-  const apiKey = process.env.RESEND_API_KEY;
+  // Strip BOM (U+FEFF = 65279) that Windows PowerShell may inject via piped env var input
+  const rawKey = process.env.RESEND_API_KEY ?? "";
+  const apiKey = (rawKey.charCodeAt(0) === 0xFEFF ? rawKey.slice(1) : rawKey).trim();
+
   if (!apiKey) {
     return NextResponse.json(
       { error: "Email service not configured. Please contact me directly at kimx3129@gmail.com" },
@@ -23,7 +26,7 @@ export async function POST(request: NextRequest) {
       message: string;
     };
 
-    // ── Validation ────────────────────────────────────────────────────────────
+    // -- Validation -----------------------------------------------------------
     if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return NextResponse.json(
         { error: "All fields are required." },
@@ -39,7 +42,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // ── Send email via Resend ─────────────────────────────────────────────────
+    // -- Send email via Resend ------------------------------------------------
     const { error } = await resend.emails.send({
       from:    FROM_EMAIL,
       to:      TO_EMAIL,
@@ -66,7 +69,7 @@ export async function POST(request: NextRequest) {
           </table>
           <hr style="border:none;border-top:1px solid #27272a;margin:24px 0;" />
           <p style="color:#a1a1aa;font-size:12px;margin:0;">
-            Sent via <a href="https://portfolio-site-kimx3129s-projects.vercel.app" style="color:#818cf8;">sungminkim.dev portfolio</a>
+            Sent via <a href="https://sungmin-kim-portfolio.dev" style="color:#818cf8;">sungmin-kim-portfolio.dev</a>
           </p>
         </div>
       `,
