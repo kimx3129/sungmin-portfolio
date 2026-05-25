@@ -140,7 +140,7 @@ export default function Hero() {
         {/* Status pill */}
         <div className="hero-in-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/10 text-accent text-sm font-medium mb-10">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
-          Senior Software Engineer&nbsp;·&nbsp;Tempus AI&nbsp;·&nbsp;San Jose, CA
+          Senior Software Engineer&nbsp;·&nbsp;Tempus AI&nbsp;·&nbsp;Redwood City, CA
         </div>
 
         {/* ── Name — gradient ── */}
