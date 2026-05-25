@@ -12,6 +12,8 @@ export interface Project {
   link?: string;
   github?: string;
   highlights: string[];
+  featured?: boolean;
+  agents?: { name: string; role: string }[];
 }
 
 export interface Publication {
@@ -208,6 +210,30 @@ export const education: Education[] = [
 // Projects
 // ---------------------------------------------------------------------------
 export const projects: Project[] = [
+  {
+    id:          "portfolio-site",
+    title:       "AI-Powered Portfolio Website",
+    description: "This portfolio itself — architected by a LangGraph multi-agent pipeline. Six specialised AI agents collaborated to plan, design, generate, test, and deploy the site end-to-end.",
+    tech:        ["LangGraph", "Python", "Claude API", "Next.js 14", "TypeScript", "Tailwind CSS", "Vercel"],
+    year:        "2025",
+    link:        "https://portfolio-site-kimx3129s-projects.vercel.app",
+    github:      "https://github.com/kimx3129/sungmin-portfolio",
+    featured:    true,
+    highlights: [
+      "StateGraph pipeline with conditional retry edges — QA agent loops back up to 2× before deployment",
+      "Dark professional theme with canvas ripple animation and staggered CSS hero reveals",
+      "Contact form powered by Resend email API with real-time delivery to kimx3129@gmail.com",
+      "Security headers, Vercel deployment, and GitHub CI/CD integration",
+    ],
+    agents: [
+      { name: "Master Agent",         role: "Orchestrates the full pipeline and manages shared state" },
+      { name: "Planner Agent",        role: "Defines site structure, sections, and content hierarchy" },
+      { name: "UI/UX Agent",          role: "Specifies design system: colours, typography, spacing, motion" },
+      { name: "Code Generator Agent", role: "Writes Next.js / TypeScript / Tailwind source code" },
+      { name: "QA / Debug Agent",     role: "Reviews output, flags issues, and triggers retry if needed" },
+      { name: "Deployment Agent",     role: "Configures Vercel settings, env vars, and security headers" },
+    ],
+  },
   {
     id:          "crime-prediction",
     title:       "Crime Prediction",

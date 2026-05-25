@@ -5,6 +5,7 @@ import Navigation    from "@/components/Navigation";
 import Hero          from "@/components/Hero";
 import Education     from "@/components/Education";
 import Experience    from "@/components/Experience";
+import Projects      from "@/components/Projects";
 import Blog          from "@/components/Blog";          // Courses & Lectures
 import Research      from "@/components/Research";
 import Certifications from "@/components/Certifications";
@@ -33,9 +34,10 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Navigation />
       <Hero />
-      {/* Section order: 최종학력 → 회사이력 → Courses & Lectures → Research → 자격증 → Contact */}
+      {/* Section order: 최종학력 → 회사이력 → Projects → Courses & Lectures → Research → 자격증 → Contact */}
       <Education />
       <Experience />
+      <Projects />
       <Blog />
       <Research />
       <Certifications />
