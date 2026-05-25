@@ -215,8 +215,7 @@ export const projects: Project[] = [
     title:       "AI-Powered Portfolio Website",
     description: "This portfolio itself — architected by a LangGraph multi-agent pipeline. Six specialised AI agents collaborated to plan, design, generate, test, and deploy the site end-to-end.",
     tech:        ["LangGraph", "Python", "Claude API", "Next.js 14", "TypeScript", "Tailwind CSS", "Vercel"],
-    year:        "2025",
-    link:        "https://portfolio-site-kimx3129s-projects.vercel.app",
+    year:        "2026",
     github:      "https://github.com/kimx3129/sungmin-portfolio",
     featured:    true,
     highlights: [
