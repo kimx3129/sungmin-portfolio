@@ -134,7 +134,7 @@ export const experiences: Experience[] = [
     id:          "carvi",
     company:     "Carvi Inc.",
     role:        "Data Scientist",
-    location:    "United States",
+    location:    "Chicago, Illinois",
     period:      "March 2017 – January 2019",
     description: "Applied machine learning and statistical modeling to extract actionable insights from large datasets, supporting product and business decision-making.",
     highlights: [
@@ -149,7 +149,7 @@ export const experiences: Experience[] = [
     id:          "first-analytics",
     company:     "First Analytics",
     role:        "Data Scientist Intern",
-    location:    "United States",
+    location:    "Chicago, Illinois",
     period:      "June 2016 – August 2016",
     description: "Contributed to analytics projects and exploratory data analysis for enterprise clients during a focused summer internship.",
     highlights: [
