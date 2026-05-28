@@ -58,7 +58,7 @@ export default function Navigation() {
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden lg:flex items-center gap-6" role="list">
+        <ul className="hidden xl:flex items-center gap-5" role="list">
           {NAV_ITEMS.map(({ label, href }) => (
             <li key={href}>
               <a
@@ -77,7 +77,7 @@ export default function Navigation() {
         </ul>
 
         {/* Desktop CTA buttons */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden xl:flex items-center gap-3">
           <a
             href="/%5BSungmin%5DResume.pdf"
             target="_blank"
@@ -105,7 +105,7 @@ export default function Navigation() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden p-2 rounded-md text-text-secondary hover:text-white transition-colors"
+          className="xl:hidden p-2 rounded-md text-text-secondary hover:text-white transition-colors"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -127,7 +127,7 @@ export default function Navigation() {
       {menuOpen && (
         <div
           id="mobile-menu"
-          className="lg:hidden bg-[#111111] border-b border-white/[0.08] px-4 pb-4"
+          className="xl:hidden bg-[#111111] border-b border-white/[0.08] px-4 pb-4"
         >
           <ul className="flex flex-col gap-1 pt-2" role="list">
             {NAV_ITEMS.map(({ label, href }) => (
